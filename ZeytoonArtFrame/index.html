@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Zeytoon Art Frame</title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            background-image: url('Image/BG/WP/BG(24).jpg');
+            background-color: rgb(22, 11, 11);
+            background-size: 300px;
+            background-blend-mode: overlay;
+            margin: 0;
+        }
+
+        h1 {
+            color: wheat;
+            font-family: "Segoe UI", Arial, sans-serif;
+            font-weight: 400;
+            font-size: 50px;
+        }
+
+        a {
+            font-size: 30px;
+        }
+
+        .CenterBox {
+            width: min-content;
+            height: min-content;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            position: absolute;
+        }
+
+        .MainContent {
+            margin-top: 50px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .ZArtContent {
+            width: min-content;
+            height: min-content;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 110px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="MainDiv" class="MainContent">
+        <h1>Zeytoon Art Frame v1.0</h1>
+        <a href="https://github.com/zeytoon-org/ZeytoonArtFrame">github.com/zeytoon-org/ZeytoonArtFrame</a>
+        <div id="MyContent1" class="ZArtContent"></div>
+        <div id="MyContent2" class="ZArtContent"></div>
+        <div id="MyContent3" class="ZArtContent"></div>
+        <div id="MyContent4" class="ZArtContent"></div>
+        <div id="MyContent5" class="ZArtContent"></div>
+        <div id="MyContent6" class="ZArtContent"></div>
+
+    </div>
+    <div style="height: 170px; background-color: rgba(0, 0, 0, 0.4); color:white; 
+    padding: 5px 5px 10px 5px;  position: relative; display: block; bottom:0; margin-top: 70px; text-align: center;
+    font-family: 'Segoe UI', Arial, sans-serif; font-weight: 200; ">
+    <hr style="margin-block-start: -0.2em; width:55%;">
+        <h3>Help Preserve This Project</h3>
+        <p>Support for the continued development of Semantic UI comes directly from the community.</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="width: 100; border:0; margin: 0;">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="QMPQGV24Y72PS" />
+            <input type="image" src="https://rostamkhani.github.io/ZeytoonDonateButton.png" border="0" name="submit"
+                title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+            <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+    </div>
+    <script src="js/ZeytoonArtFrame.js"></script>
+    <script>
+        var numImg = 1;
+
+        var get = (elID) => document.getElementById(elID);
+
+        var zeytoonAF1 = new ZeytoonArtFrame(
+            get('MyContent1'),                  // Html Element Content ZArtFrame
+            'Image/Artwork/pic(1).jpg',         // Image
+            {                                   // Options
+                WidthImage: 'auto',
+                HeightImage: '350px',
+                FrameWidth: '105px',
+                FrameStyleNumber: 8,
+                FrameCorner: true,
+                FrameCenter: true
+            }
+        );
+
+
+
+        var zeytoonAF2 = new ZeytoonArtFrame(
+            get('MyContent2'),                  // Html Element Content ZArtFrame
+            'Image/Artwork/pic(2).jpg',         // Image
+            {                                   // Options
+                WidthImage: 'auto',
+                HeightImage: '550px',
+                FrameWidth: '100px',
+                FrameStyleNumber: 4,
+                FrameCorner: false,
+                FrameCenter: false
+            }
+        );
+
+        var zeytoonAF3 = new ZeytoonArtFrame(
+            get('MyContent3'),                  // Html Element Content ZArtFrame
+            'Image/Artwork/pic(3).jpg',         // Image
+            {                                   // Options
+                FrameStyleNumber: 3,
+            }
+        );
+
+        var zeytoonAF4 = new ZeytoonArtFrame(
+            get('MyContent4'),                  // Html Element Content ZArtFrame
+            'Image/Artwork/pic(4).jpg',         // Image
+            {                                   // Options
+                WidthImage: 'auto',
+                HeightImage: '450px',
+                FrameWidth: '120px',
+                FrameStyleNumber: 8,
+                FrameCorner: true,
+                FrameCenter: false
+            }
+        );
+
+        var zeytoonAF5 = new ZeytoonArtFrame(
+            get('MyContent5'),                  // Html Element Content ZArtFrame
+            'Image/Artwork/pic(5).jpg',         // Image
+            {                                   // Options
+                WidthImage: 'auto',
+                HeightImage: '550px',
+                FrameWidth: 'auto',
+                FrameStyleNumber: 3,
+                FrameCorner: true,
+                FrameCenter: true
+            }
+        );
+
+        var zeytoonAF6 = new ZeytoonArtFrame(
+            get('MyContent6'),                  // Html Element Content ZArtFrame
+            'Image/Artwork/pic(6).jpg',         // Image
+            {                                   // Options
+                WidthImage: 'auto',
+                HeightImage: '550px',
+                FrameWidth: 'auto',
+                FrameStyleNumber: 10,
+                FrameCorner: true,
+                FrameCenter: true
+            }
+        );
+
+
+        // Create Random Sare Hosari 
+        var elMain = document.getElementById('MainDiv');
+        for (let index = 0; index <= 10; index++) {
+            var elContent = document.createElement('div');
+            var num = (index + 7)
+            elContent.id = 'MyContent' + num;
+            elContent.className = 'ZArtContent';
+            elMain.appendChild(elContent);
+
+            var zeytoonAF7 = new ZeytoonArtFrame(
+                get('MyContentNUM'.replace('NUM', num)),                  // Html Element Content ZArtFrame
+                'Image/Artwork/pic(NUM).jpg'.replace('NUM', num),         // Image
+                {                                                       // Options
+                    WidthImage: 'auto',
+                    HeightImage: (Math.round(Math.random() * 35) * 10 + 300) + 'px',
+                    FrameWidth: 'auto',
+                    FrameStyleNumber: Math.round((Math.random() * 9)) + 1,
+                    FrameCorner: true,
+                    FrameCenter: false
+                }
+            );
+
+
+        }
+
+    </script>
+</body>
+
+</html>
